@@ -1,0 +1,718 @@
+{
+  "version": "0.0.3",
+  "platformVersion": "7.2.2",
+  "authentication": {
+    "type": "custom",
+    "test": "$func$2$f$",
+    "fields": [
+      {
+        "key": "seckey",
+        "label": "Secret Key",
+        "type": "string",
+        "required": true,
+        "helpText": "You can find your Secret Key on the [Settings > API](https://rave.flutterwave.com/dashboard/settings/apis) page."
+      }
+    ],
+    "connectionLabel": "{{bundle.inputData.business_name}}"
+  },
+  "beforeRequest": [
+    "$func$1$f$"
+  ],
+  "afterResponse": [
+    "$func$2$f$"
+  ],
+  "resources": {},
+  "triggers": {
+    "transaction": {
+      "key": "transaction",
+      "noun": "Transaction",
+      "display": {
+        "label": "New Transaction",
+        "description": "Triggers when a new transaction is added.",
+        "important": true
+      },
+      "operation": {
+        "inputFields": [
+          {
+            "key": "status",
+            "required": true,
+            "choices": {
+              "successful": "Successful",
+              "failed": "Failed"
+            }
+          }
+        ],
+        "perform": "$func$2$f$",
+        "sample": {
+          "id": 12345,
+          "transaction_reference": "CASHOFFLINE-12345",
+          "processor_reference": "12345-134",
+          "device_fingerprint": "N/A",
+          "transaction_cycle": "one-time",
+          "amount": 5000,
+          "currency": "NGN",
+          "amount_charged": 5000,
+          "rave_fee": 0,
+          "merchant_fee": 0,
+          "merchant_bore_fee": 0,
+          "processor_response_code": "00",
+          "processor_response_message": null,
+          "auth_model": "cashoffline",
+          "customer_ip": "123.123.123.123",
+          "narration": "CASHOFFLINE TX 12345",
+          "status": "successful",
+          "processor_verification_url": "N/A",
+          "processor_vbv_response_code": "N/A",
+          "processor_vbv_response_message": "N/A",
+          "processor_acct_response_code": "00",
+          "processor_acct_response_message": "successful",
+          "payment_entity": "cash-offline",
+          "payment_entity_id": 1,
+          "fraud_status": "ok",
+          "date_created": "2018-08-10T10:20:10.000Z",
+          "unique_reference": null,
+          "has_events": "fed3a923c72b2d23dfa230151g23f189",
+          "amount_due_merchant": 2,
+          "customer": {
+            "id": 1234,
+            "customer_email": "r12345@rave134dm.com",
+            "customer_phonenumber": null,
+            "customer_fullname": "Johnny Kramer",
+            "date_created": "2018-08-10T10:20:10.000Z"
+          },
+          "merchant": {
+            "id": 123,
+            "business_name": "FearMer",
+            "country": "NG",
+            "contact_person": "Desola Ade"
+          }
+        },
+        "outputFields": [
+          {
+            "key": "amount",
+            "label": "Amount"
+          },
+          {
+            "key": "currency",
+            "label": "Currency"
+          },
+          {
+            "key": "rave_fee",
+            "label": "Rave fee"
+          },
+          {
+            "key": "merchant_fee",
+            "label": "Merchant fee"
+          },
+          {
+            "key": "narration",
+            "label": "Narration"
+          },
+          {
+            "key": "status",
+            "label": "Status"
+          },
+          {
+            "key": "date_created",
+            "label": "Date created"
+          },
+          {
+            "key": "customer",
+            "label": "Customer"
+          },
+          {
+            "key": "merchant",
+            "label": "Merchant"
+          }
+        ]
+      }
+    },
+    "transfer": {
+      "key": "transfer",
+      "noun": "Transfer",
+      "display": {
+        "label": "New Transfer",
+        "description": "Triggers when a new transfer is added.",
+        "important": true
+      },
+      "operation": {
+        "inputFields": [
+          {
+            "key": "status",
+            "required": true,
+            "choices": {
+              "successful": "Successful",
+              "failed": "Failed"
+            }
+          }
+        ],
+        "perform": "$func$2$f$",
+        "sample": {
+          "id": 1234,
+          "account_number": "1234567890",
+          "bank_code": "044",
+          "fullname": "Johnny Kramer",
+          "date_created": "2018-08-09T11:32:05.000Z",
+          "currency": "NGN",
+          "debit_currency": null,
+          "amount": 1,
+          "fee": 45,
+          "status": "FAILED",
+          "reference": "12345678",
+          "meta": null,
+          "narration": null,
+          "approver": null,
+          "complete_message": "DISBURSE FAILED: An error has occurred.",
+          "requires_approval": 0,
+          "is_approved": 1,
+          "bank_name": "ACCESS BANK NIGERIA"
+        },
+        "outputFields": [
+          {
+            "key": "id",
+            "label": "ID"
+          },
+          {
+            "key": "account_number",
+            "label": "Account number"
+          },
+          {
+            "key": "bank_code",
+            "label": "Bank code"
+          },
+          {
+            "key": "fullname",
+            "label": "Fullname"
+          },
+          {
+            "key": "date_created",
+            "label": "Date created"
+          },
+          {
+            "key": "currency",
+            "label": "Currency"
+          },
+          {
+            "key": "debit_currency",
+            "label": "Debit currency"
+          },
+          {
+            "key": "amount",
+            "label": "Amount"
+          },
+          {
+            "key": "fee",
+            "label": "Fee"
+          },
+          {
+            "key": "status",
+            "label": "Status"
+          },
+          {
+            "key": "reference",
+            "label": "Reference"
+          },
+          {
+            "key": "meta",
+            "label": "Meta"
+          },
+          {
+            "key": "narration",
+            "label": "Narration"
+          },
+          {
+            "key": "approver",
+            "label": "Approver"
+          },
+          {
+            "key": "complete_message",
+            "label": "Complete message"
+          },
+          {
+            "key": "requires_approval",
+            "label": "Requires approval"
+          },
+          {
+            "key": "is_approved",
+            "label": "Is approved"
+          },
+          {
+            "key": "bank_name",
+            "label": "Bank name"
+          }
+        ]
+      }
+    },
+    "subscription": {
+      "key": "subscription",
+      "noun": "Subscription",
+      "display": {
+        "label": "New Subscription",
+        "description": "Triggers when a new subscription is added.",
+        "important": true
+      },
+      "operation": {
+        "inputFields": [],
+        "perform": "$func$2$f$",
+        "sample": {
+          "id": 1234,
+          "amount": 3000,
+          "stop_date": null,
+          "next_due": null,
+          "customer": {
+            "id": 12345,
+            "customer_email": "test@example.com"
+          },
+          "plan": 123,
+          "status": "active",
+          "date_created": "2018-07-23T12:50:20.000Z"
+        },
+        "outputFields": [
+          {
+            "key": "id",
+            "label": "ID"
+          },
+          {
+            "key": "amount",
+            "label": "Amount"
+          },
+          {
+            "key": "stop_date",
+            "label": "Stop date"
+          },
+          {
+            "key": "next_due",
+            "label": "Next due"
+          },
+          {
+            "key": "customer",
+            "label": "Customer"
+          },
+          {
+            "key": "status",
+            "label": "Status"
+          },
+          {
+            "key": "date_created",
+            "label": "Date created"
+          }
+        ]
+      }
+    }
+  },
+  "creates": {
+    "create_transfer": {
+      "key": "create_transfer",
+      "noun": "Transfer",
+      "display": {
+        "label": "Create Transfer",
+        "description": "Creates a new transfer.",
+        "important": true
+      },
+      "operation": {
+        "inputFields": [
+          {
+            "key": "account_bank",
+            "type": "string",
+            "required": true,
+            "helpText": "This is the recipient bank. You can get a list of banks [here](https://developer.flutterwave.com/v2.0/reference#list-of-banks-for-transfer)",
+            "label": "Account bank"
+          },
+          {
+            "key": "account_number",
+            "type": "string",
+            "required": true,
+            "helpText": "This is the recipient account number, for mpesa and ghana mobile money please add the recipients phone number in this formats e.g. 233567394737, 25493743988",
+            "label": "Account number"
+          },
+          {
+            "key": "amount",
+            "type": "number",
+            "required": true,
+            "label": "Amount"
+          },
+          {
+            "key": "currency",
+            "type": "string",
+            "required": true,
+            "label": "Currency",
+            "choices": {
+              "NGN": "Naira",
+              "KES": "Kenyan Shillings",
+              "GHS": "Ghanian cedis",
+              "UGX": "Ugandan shillings",
+              "TZS": "Tanzania shillings"
+            }
+          },
+          {
+            "key": "narration",
+            "type": "string",
+            "required": true,
+            "label": "Narration"
+          },
+          {
+            "key": "callback_url",
+            "type": "string",
+            "helpText": "This is a url you provide so we can notify you when the transfer is completed, you can pass this in place of using [webhooks](https://developer.flutterwave.com/v2.0/reference#how-transfers-work)",
+            "label": "Callback URL"
+          }
+        ],
+        "perform": "$func$2$f$",
+        "sample": {
+          "status": "success",
+          "message": "TRANSFER-CREATED",
+          "data": {
+            "id": 1234,
+            "account_number": "1234567890",
+            "bank_code": "044",
+            "fullname": "Johnny Kramer",
+            "date_created": "2018-08-10T12:21:13.000Z",
+            "currency": "NGN",
+            "amount": "123",
+            "fee": 45,
+            "status": "NEW",
+            "reference": "12345678",
+            "meta": null,
+            "complete_message": "",
+            "requires_approval": 0,
+            "is_approved": 1,
+            "bank_name": "ACCESS BANK NIGERIA"
+          }
+        },
+        "outputFields": [
+          {
+            "key": "status",
+            "label": "Status"
+          },
+          {
+            "key": "data",
+            "label": "Transfer data"
+          }
+        ]
+      }
+    },
+    "create_payment_plan": {
+      "key": "create_payment_plan",
+      "noun": "Payment Plan",
+      "display": {
+        "label": "Create Payment Plan",
+        "description": "Creates a new payment plan.",
+        "important": true
+      },
+      "operation": {
+        "inputFields": [
+          {
+            "key": "name",
+            "type": "string",
+            "required": true,
+            "helpText": "This is what would appear on the subscription reminder email.",
+            "label": "Name"
+          },
+          {
+            "key": "amount",
+            "type": "number",
+            "required": true,
+            "helpText": "this is the amount for the plan. The amount would be charged on each billing cycle.",
+            "label": "Amount"
+          },
+          {
+            "key": "currency",
+            "type": "string",
+            "required": true,
+            "label": "Currency",
+            "choices": {
+              "NGN": "Naira",
+              "KES": "Kenyan Shillings",
+              "GHS": "Ghanian cedis",
+              "UGX": "Ugandan shillings",
+              "TZS": "Tanzania shillings"
+            }
+          },
+          {
+            "key": "interval",
+            "type": "string",
+            "required": true,
+            "choices": {
+              "daily": "Daily",
+              "weekly": "Weekly",
+              "monthly": "Monthly",
+              "yearly": "Yearly"
+            },
+            "label": "Interval"
+          },
+          {
+            "key": "duration",
+            "type": "number",
+            "helpText": "If set to 5 and intervals is set to monthly, the subscriber would be charged 5 times. Leave empty to charge indefinitely.",
+            "label": "Number of times to charge a subscriber."
+          }
+        ],
+        "perform": "$func$2$f$",
+        "sample": {
+          "status": "success",
+          "message": "CREATED-PAYMENTPLAN",
+          "data": {
+            "id": 13,
+            "name": "N/A",
+            "amount": 0,
+            "interval": "daily",
+            "duration": 0,
+            "status": "active",
+            "plan_token": "rpp_4893h39493b439f2",
+            "date_created": "2018-02-21T15:34:13.000Z"
+          }
+        },
+        "outputFields": [
+          {
+            "key": "status",
+            "label": "Status"
+          },
+          {
+            "key": "data",
+            "label": "Payment plan data"
+          }
+        ]
+      }
+    }
+  },
+  "searches": {
+    "search_transaction": {
+      "key": "search_transaction",
+      "noun": "Find Transaction",
+      "display": {
+        "label": "Find Transaction",
+        "description": "Find a transaction by the Transaction ID or Payment reference.",
+        "important": true
+      },
+      "operation": {
+        "inputFields": [
+          {
+            "key": "txref",
+            "type": "string",
+            "helpText": "This is the merchant unique reference displayed as Transaction ID on your rave dashboard.",
+            "label": "Transaction ID"
+          },
+          {
+            "key": "flwref",
+            "type": "string",
+            "helpText": "This is the payment gateway reference displayed as Payment reference on your rave dashboard.",
+            "label": "Payment Reference"
+          }
+        ],
+        "perform": "$func$2$f$",
+        "sample": {
+          "txid": 157524,
+          "txref": "Rave-Pages655350753556",
+          "flwref": "FLWACHMOCK-1527583529027",
+          "devicefingerprint": "532b4e9fa7695279392f4780b9868b9b",
+          "cycle": "one-time",
+          "amount": 700,
+          "currency": "NGN",
+          "chargedamount": 700,
+          "appfee": 0,
+          "merchantfee": 0,
+          "merchantbearsfee": 1,
+          "chargecode": "00",
+          "chargemessage": "Approved. Successful.",
+          "authmodel": "AUTH",
+          "ip": "41.190.30.27",
+          "narration": "Synergy Group",
+          "status": "successful",
+          "vbvcode": "N/A",
+          "vbvmessage": "N/A",
+          "authurl": "NO-URL",
+          "acctcode": null,
+          "acctmessage": null,
+          "paymenttype": "account",
+          "paymentid": "478",
+          "fraudstatus": "ok",
+          "chargetype": "normal",
+          "createdday": 2,
+          "createddayname": "TUESDAY",
+          "createdweek": 22,
+          "createdmonth": 4,
+          "createdmonthname": "MAY",
+          "createdquarter": 2,
+          "createdyear": 2018,
+          "createdyearisleap": false,
+          "createddayispublicholiday": 0,
+          "createdhour": 8,
+          "createdminute": 45,
+          "createdpmam": "am",
+          "created": "2018-05-29T08:45:26.000Z",
+          "customerid": 29378,
+          "custphone": "N/A",
+          "custnetworkprovider": "UNKNOWN PROVIDER",
+          "custname": "Temi Adesina",
+          "custemail": "temiloluwa_adesina@yahoo.com",
+          "custemailprovider": "YAHOO",
+          "custcreated": "2018-05-29T08:45:26.000Z",
+          "accountid": 134,
+          "acctbusinessname": "Synergy Group",
+          "acctcontactperson": "Desola Ade",
+          "acctcountry": "NG",
+          "acctbearsfeeattransactiontime": 1,
+          "acctparent": 1,
+          "acctvpcmerchant": "N/A",
+          "acctalias": "temi",
+          "acctisliveapproved": 0,
+          "orderref": "URF_1527583526904_2107135",
+          "paymentplan": null,
+          "paymentpage": null,
+          "raveref": "RV315275835263042C559EA650",
+          "amountsettledforthistransaction": 700,
+          "account": {
+            "id": 478,
+            "account_number": "0690000037",
+            "account_bank": "044",
+            "first_name": "Dele Moruf",
+            "last_name": "Quadri",
+            "account_is_blacklisted": 0,
+            "createdAt": "2018-04-05T13:30:04.000Z",
+            "updatedAt": "2018-06-01T06:03:41.000Z",
+            "deletedAt": null,
+            "account_token": {
+              "token": "flw-t0cd8f7ac849807c50-k3n-mock"
+            }
+          },
+          "meta": [
+            {
+              "id": 30106,
+              "metaname": "Book ID",
+              "metavalue": "hsjsjsj",
+              "createdAt": "2018-05-29T08:45:26.000Z",
+              "updatedAt": "2018-05-29T08:45:26.000Z",
+              "deletedAt": null,
+              "getpaidTransactionId": 157524
+            }
+          ]
+        },
+        "outputFields": [
+          {
+            "key": "amount",
+            "label": "Amount"
+          },
+          {
+            "key": "currency",
+            "label": "Currency"
+          },
+          {
+            "key": "appfee",
+            "label": "Rave fee"
+          },
+          {
+            "key": "merchantfee",
+            "label": "Merchant fee"
+          },
+          {
+            "key": "narration",
+            "label": "Narration"
+          },
+          {
+            "key": "status",
+            "label": "Status"
+          },
+          {
+            "key": "created",
+            "label": "Date created"
+          },
+          {
+            "key": "customer",
+            "label": "Customer"
+          }
+        ]
+      }
+    },
+    "search_transfer": {
+      "key": "search_transfer",
+      "noun": "Find Transfer",
+      "display": {
+        "label": "Find Transfer",
+        "description": "Find a transfer by the Transfer reference.",
+        "important": true
+      },
+      "operation": {
+        "inputFields": [
+          {
+            "key": "reference",
+            "type": "string",
+            "helpText": "This is the unique Transfer reference you generated for the transfer on Rave.",
+            "label": "Transfer Reference"
+          }
+        ],
+        "perform": "$func$2$f$",
+        "sample": {
+          "id": 1234,
+          "account_number": "1234567890",
+          "bank_code": "044",
+          "fullname": "Johnny Kramer",
+          "date_created": "2018-08-09T11:32:05.000Z",
+          "currency": "NGN",
+          "debit_currency": null,
+          "amount": 1,
+          "fee": 45,
+          "status": "FAILED",
+          "reference": "12345678",
+          "meta": null,
+          "narration": null,
+          "approver": null,
+          "complete_message": "DISBURSE FAILED: An error has occurred.",
+          "requires_approval": 0,
+          "is_approved": 1,
+          "bank_name": "ACCESS BANK NIGERIA"
+        },
+        "outputFields": [
+          {
+            "key": "id",
+            "label": "ID"
+          },
+          {
+            "key": "account_number",
+            "label": "account_number"
+          },
+          {
+            "key": "bank_code",
+            "label": "bank_code"
+          },
+          {
+            "key": "fullname",
+            "label": "fullname"
+          },
+          {
+            "key": "currency",
+            "label": "currency"
+          },
+          {
+            "key": "amount",
+            "label": "amount"
+          },
+          {
+            "key": "fee",
+            "label": "fee"
+          },
+          {
+            "key": "status",
+            "label": "status"
+          },
+          {
+            "key": "reference",
+            "label": "reference"
+          },
+          {
+            "key": "narration",
+            "label": "narration"
+          },
+          {
+            "key": "complete_message",
+            "label": "complete_message"
+          },
+          {
+            "key": "bank_name",
+            "label": "bank_name"
+          }
+        ]
+      }
+    }
+  },
+  "searchOrCreates": {}
+}
