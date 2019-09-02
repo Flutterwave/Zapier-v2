@@ -2,7 +2,6 @@ const searchTransfer = (z, bundle) => {
   const { seckey } = bundle.authData;
   const { reference } = bundle.inputData;
   const params = { seckey };
-  if (status) params.status = status;
   const requestOptions = {
     method: 'GET',
     url: 'https://api.ravepay.co/v2/gpx/transfers',
@@ -34,7 +33,8 @@ module.exports = {
         helpText: 'This is the unique Transfer reference you generated for the transfer on Rave.',
         label: 'Transfer Reference',
         required: true,
-      },
+      }
+      
     ],
     perform: searchTransfer,
     sample: {
