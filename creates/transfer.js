@@ -102,9 +102,11 @@ module.exports = {
     ],
     perform: createTransfer,
     sample: {
-      status: "success",
-      message: "TRANSFER-CREATED",
-      data: {
+      // status: "success",
+      // message: "TRANSFER-CREATED",
+      // data:
+      
+      //  {
         id: 1234,
         account_number: "1234567890",
         bank_code: "044",
@@ -120,7 +122,7 @@ module.exports = {
         requires_approval: 0,
         is_approved: 1,
         bank_name: "ACCESS BANK NIGERIA"
-      }
+      // }
     },
     outputFields: [{ key: "data", label: "Transfer data" }]
   }
