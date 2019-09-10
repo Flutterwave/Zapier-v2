@@ -1,7 +1,13 @@
 const searchTransfer = (z, bundle) => {
-  const { seckey } = bundle.authData;
-  const { reference } = bundle.inputData;
-  const params = { seckey };
+  const {
+    seckey
+  } = bundle.authData;
+  const {
+    reference
+  } = bundle.inputData;
+  const params = {
+    seckey
+  };
   const requestOptions = {
     method: 'GET',
     url: 'https://api.ravepay.co/v2/gpx/transfers',
@@ -11,6 +17,8 @@ const searchTransfer = (z, bundle) => {
   return z.request(requestOptions)
     .then((response) => {
       if (response.status !== 200) {
+        return [];
+      } else if (response.json.data.code === " ") {
         return [];
       }
       return response.json.data.transfers;
@@ -26,15 +34,14 @@ module.exports = {
     important: true,
   },
   operation: {
-    inputFields: [
-      {
+    inputFields: [{
         key: 'reference',
         type: 'string',
-        helpText: 'This is the unique Transfer reference you generated for the transfer on Rave.',
+        helpText: 'This is the unique transfer reference you generated for the transfer on Rave.',
         label: 'Transfer Reference',
         required: true,
       }
-      
+
     ],
     perform: searchTransfer,
     sample: {
@@ -57,24 +64,54 @@ module.exports = {
       is_approved: 1,
       bank_name: 'ACCESS BANK NIGERIA',
     },
-    outputFields: [
-      { key: 'id', label: 'ID' },
-      { key: 'account_number', label: 'account_number' },
-      { key: 'bank_code', label: 'bank_code' },
-      { key: 'fullname', label: 'fullname' },
-      { key: 'currency', label: 'currency' },
-      { key: 'amount', label: 'amount' },
-      { key: 'fee', label: 'fee' },
-      { key: 'status', label: 'status' },
-      { key: 'reference', label: 'reference' },
-      { key: 'narration', label: 'narration' },
-      { key: 'complete_message', label: 'complete_message' },
-      { key: 'bank_name', label: 'bank_name' },
+    outputFields: [{
+        key: 'id',
+        label: 'ID'
+      },
+      {
+        key: 'account_number',
+        label: 'account_number'
+      },
+      {
+        key: 'bank_code',
+        label: 'bank_code'
+      },
+      {
+        key: 'fullname',
+        label: 'fullname'
+      },
+      {
+        key: 'currency',
+        label: 'currency'
+      },
+      {
+        key: 'amount',
+        label: 'amount'
+      },
+      {
+        key: 'fee',
+        label: 'fee'
+      },
+      {
+        key: 'status',
+        label: 'status'
+      },
+      {
+        key: 'reference',
+        label: 'reference'
+      },
+      {
+        key: 'narration',
+        label: 'narration'
+      },
+      {
+        key: 'complete_message',
+        label: 'complete_message'
+      },
+      {
+        key: 'bank_name',
+        label: 'bank_name'
+      },
     ],
   },
 };
-
-
-
-
-
