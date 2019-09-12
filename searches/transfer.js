@@ -6,7 +6,9 @@ const searchTransfer = (z, bundle) => {
     reference
   } = bundle.inputData;
   const params = {
-    seckey
+    seckey,
+    reference
+
   };
   const requestOptions = {
     method: 'GET',
@@ -16,12 +18,16 @@ const searchTransfer = (z, bundle) => {
 
   return z.request(requestOptions)
     .then((response) => {
+
       if (response.status !== 200) {
         return [];
-      } else if (response.json.data.code === " ") {
+      } else if (response.json.data.page_info.total === 0) {
         return [];
       }
-      return response.json.data.transfers;
+
+      const apiResponse = [response.json.data.transfers];
+      // return apiResponse;
+      return apiResponse;
     });
 };
 
