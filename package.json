@@ -1,6 +1,6 @@
 {
   "name": "rave-zapier-integration",
-  "version": "0.0.7",
+  "version": "0.0.8",
   "description": "Rave API integration for the Zapier platform.",
   "author": "Petro Kuzmychev <kuzmychev@gmail.com>",
   "main": "index.js",
