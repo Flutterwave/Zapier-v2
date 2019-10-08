@@ -3,6 +3,7 @@ const createTransfer = (z, bundle) => {
   const {
     account_bank,
     account_number,
+    
     amount,
     narration,
     currency,
@@ -17,6 +18,8 @@ const createTransfer = (z, bundle) => {
       seckey,
       account_bank,
       account_number,
+      
+      
       amount,
       narration,
       currency,
@@ -45,19 +48,28 @@ module.exports = {
   },
   operation: {
     inputFields: [
-      {
-        key: "country",
-        required: true,
-        helpText: "This is the country of the recipient bank",
-        label: "Country",
-        dynamic: "country.Code.Name"
-      },
+      // {
+      //   key: "country",
+      //   required: true,
+      //   helpText: "This is the country of the recipient bank",
+      //   label: "Country",
+      //   dynamic: "country.Code.Name"
+      // },
       {
         key: "account_bank",
         required: true,
-        helpText: "This is the recipient bank",
-        label: "Account bank",
-        dynamic: "bank.Code.Name"
+        type: "string",
+        helpText: "This is the recipient bank code e.g Access Bank-044",
+        label: "Bank Code",
+        // dynamic: "bank.Code.Name"
+      },
+      {
+        key: "bank_Name",
+        required: true,
+        type: "string",
+        helpText: "This is the recipient bank name e.g: Access Bank",
+        label: "Bank Name",
+        // dynamic: "bank.Code.Name"
       },
       {
         key: "account_number",

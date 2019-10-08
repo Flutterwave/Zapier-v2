@@ -26,7 +26,7 @@ module.exports = {
     label: "New Bank",
     description: "Triggers to populate the account bank dropdown",
     important: true,
-    hidden: true
+    // hidden: true
   },
   operation: {
     perform: listBanks
