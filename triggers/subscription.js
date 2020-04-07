@@ -29,8 +29,8 @@ module.exports = {
     perform: listSubscriptions,
     sample: {
 
-      id: '1234',
-      amount: '3000',
+      id: 1234,
+      amount: 3000,
       next_due: "2020-04-08T11:32:47.000Z",
       customer: {
         id: '12345',

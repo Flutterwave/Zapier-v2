@@ -24,7 +24,7 @@ module.exports = {
   noun: "Bank",
   display: {
     label: "New Bank",
-    description: "Triggers to populate the account bank dropdown.",
+    description: "Triggers when account bank dropdown is clicked.",
     // important: true,
     // hidden: true
   },

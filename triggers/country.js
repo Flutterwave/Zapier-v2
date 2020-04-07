@@ -15,7 +15,7 @@ module.exports = {
   noun: "Country",
   display: {
     label: "New Country",
-    description: "Triggers to populate the country dropdown",
+    description: "Triggers to populate the country dropdown.",
     important: true,
     hidden: true
   },
