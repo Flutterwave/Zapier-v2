@@ -72,7 +72,8 @@ module.exports = {
     },
     outputFields: [{
         key: 'id',
-        label: 'ID'
+        label: 'ID',
+        type: 'integer',
       },
       {
         key: 'account_number',
@@ -92,11 +93,13 @@ module.exports = {
       },
       {
         key: 'amount',
-        label: 'amount'
+        label: 'amount',
+        type: 'integer',
       },
       {
         key: 'fee',
-        label: 'fee'
+        label: 'fee',
+        type: 'integer',
       },
       {
         key: 'status',

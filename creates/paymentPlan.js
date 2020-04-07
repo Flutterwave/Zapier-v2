@@ -91,8 +91,8 @@ module.exports = {
         date_created: '2018-02-21T15:34:13.000Z',
       },
     },
-    outputFields: [
-      { key: 'data', label: 'Payment plan data' },
-    ],
+    // outputFields: [
+    //   { key: 'data', label: 'Payment plan data' type:'object', required:true},
+    // ],
   },
 };

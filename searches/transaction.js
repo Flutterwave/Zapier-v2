@@ -142,10 +142,10 @@ module.exports = {
       ],
     },
     outputFields: [
-      { key: 'amount', label: 'Amount' },
+      { key: 'amount', label: 'Amount', type: 'integer' },
       { key: 'currency', label: 'Currency' },
-      { key: 'appfee', label: 'Rave fee' },
-      { key: 'merchantfee', label: 'Merchant fee' },
+      { key: 'appfee', label: 'Rave fee', type: 'integer'},
+      { key: 'merchantfee', label: 'Merchant fee' , type: 'integer'},
       { key: 'narration', label: 'Narration' },
       { key: 'status', label: 'Status' },
       { key: 'created', label: 'Date created' },
