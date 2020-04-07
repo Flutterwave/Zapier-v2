@@ -4,7 +4,7 @@ const authentication = require('./authentication');
 const transactionTrigger = require('./triggers/transaction');
 const transferTrigger = require('./triggers/transfer');
 const subscriptionTrigger = require('./triggers/subscription');
-const bankTrigger = require('./triggers/bank');
+// const bankTrigger = require('./triggers/bank');
 const countryTrigger = require("./triggers/country");
 /** Actions */
 const transferAction = require('./creates/transfer');
@@ -27,7 +27,7 @@ const App = {
     [transactionTrigger.key]: transactionTrigger,
     [transferTrigger.key]: transferTrigger,
     [subscriptionTrigger.key]: subscriptionTrigger,
-    [bankTrigger.key]: bankTrigger,
+    // [bankTrigger.key]: bankTrigger,
     [countryTrigger.key]: countryTrigger
   },
   creates: {

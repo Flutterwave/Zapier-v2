@@ -7,7 +7,6 @@ const listCountries = () => {
       { id: 005, Code: "TZ", Name: "Tanzania" },
       { id: 006, Code: "ZA", Name: "South Africa" }
     ];
-    
 };
 
 module.exports = {

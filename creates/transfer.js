@@ -3,7 +3,6 @@ const createTransfer = (z, bundle) => {
   const {
     account_bank,
     account_number,
-    
     amount,
     narration,
     currency,
@@ -18,8 +17,6 @@ const createTransfer = (z, bundle) => {
       seckey,
       account_bank,
       account_number,
-      
-      
       amount,
       narration,
       currency,
