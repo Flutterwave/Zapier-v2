@@ -5,7 +5,7 @@ const constants = require('../constants');
 const zid = Math.round(Math.random() * Math.pow(10, 15)).toString(16);
 let zrun = 0;
 
-const checkMemory = event => {
+const checkMemory = (event) => {
   event = event || {};
 
   zrun += 1;
@@ -30,7 +30,7 @@ const checkMemory = event => {
     // process will get restarted
     console.error('Force killing process by Zapier for memory usage');
 
-    /*eslint no-process-exit: 0 */
+    /* eslint no-process-exit: 0 */
     process.exit(1);
   }
 };

@@ -75,16 +75,19 @@ module.exports = {
         contact_person: 'Desola Ade',
       },
     },
-    outputFields: [
-      { key: 'amount', label: 'Amount' },
-      { key: 'currency', label: 'Currency' },
-      { key: 'rave_fee', label: 'Rave fee' },
-      { key: 'merchant_fee', label: 'Merchant fee' },
-      { key: 'narration', label: 'Narration' },
-      { key: 'status', label: 'Status' },
-      { key: 'date_created', label: 'Date created' },
-      { key: 'customer', label: 'Customer' },
-      { key: 'merchant', label: 'Merchant' },
-    ],
+    // outputFields: [
+    //   { key: 'amount', label: 'Amount' },
+    //   { key: 'currency', label: 'Currency' },
+    //   { key: 'rave_fee', label: 'Rave fee', type:'integer'},
+    //   { key: 'merchant_fee', label: 'Merchant fee', type:'integer' },
+    //   { key: 'narration', label: 'Narration' },
+    //   { key: 'status', label: 'Status' },
+    //   { key: 'date_created', label: 'Date created' },
+    //   {key: 'merchant', type: 'object', "required": true},
+    //   // {key:'merchant', label:'merchant',Id:id, business_name:business_name, country:country, Phone:customer_phonenumber, contact_person:contact_person, type:'object'},
+    //   { key: 'customer', label: 'Customer' },
+    //   // {key: "customer", "type": "object", "required": true}
+    //   // {key:'customer', label:'customer', Id:customer.id, Cusomer_email:customer.customer_email, Name:cusomer.customer_fullname, Phone:customer_phonenumber, Date:customer.date_created, type:'object'}
+    // ],
   },
 };

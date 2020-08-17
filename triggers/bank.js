@@ -24,11 +24,13 @@ module.exports = {
   noun: "Bank",
   display: {
     label: "New Bank",
-    description: "Triggers to populate the account bank dropdown",
-    important: true,
-    hidden: true
+    description: "Triggers when account bank dropdown is clicked.",
+    // important: true,
+    // hidden: true
   },
-  operation: {
-    perform: listBanks
-  }
+  operation: { type: 'polling', perform: listBanks, sample:{
+    "id": 179,
+    "Code": "232",
+    "Name": "Sterling Bank"
+  }}
 };

@@ -90,7 +90,8 @@
         "outputFields": [
           {
             "key": "amount",
-            "label": "Amount"
+            "label": "Amount",
+            "type": "integer"
           },
           {
             "key": "currency",
@@ -98,11 +99,13 @@
           },
           {
             "key": "rave_fee",
-            "label": "Rave fee"
+            "label": "Rave fee",
+            "type": "number"
           },
           {
             "key": "merchant_fee",
-            "label": "Merchant fee"
+            "label": "Merchant fee",
+            "type": "integer"
           },
           {
             "key": "narration",
@@ -118,7 +121,8 @@
           },
           {
             "key": "customer",
-            "label": "Customer"
+            "label": "Customer",
+            "type": "string"
           },
           {
             "key": "merchant",
@@ -256,9 +260,8 @@
         "perform": "$func$2$f$",
         "sample": {
           "id": 1234,
-          "amount": 3000,
-          "stop_date": null,
-          "next_due": null,
+          "amount": "3000",
+          "next_due": "2020-04-08T11:32:47.000Z",
           "customer": {
             "id": 12345,
             "customer_email": "test@example.com"
@@ -270,23 +273,23 @@
         "outputFields": [
           {
             "key": "id",
-            "label": "ID"
+            "label": "ID",
+            "type":"number"
           },
           {
             "key": "amount",
-            "label": "Amount"
+            "label": "Amount",
+            "type":"number"
           },
-          {
-            "key": "stop_date",
-            "label": "Stop date"
-          },
+  
           {
             "key": "next_due",
             "label": "Next due"
           },
           {
             "key": "customer",
-            "label": "Customer"
+            "label": "Customer",
+            "type": "dict"
           },
           {
             "key": "status",
@@ -618,7 +621,8 @@
           },
           {
             "key": "customer",
-            "label": "Customer"
+            "label": "Customer",
+            "type": "dict"
           }
         ]
       }

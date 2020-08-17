@@ -7,7 +7,6 @@ const listCountries = () => {
       { id: 005, Code: "TZ", Name: "Tanzania" },
       { id: 006, Code: "ZA", Name: "South Africa" }
     ];
-    
 };
 
 module.exports = {
@@ -15,8 +14,8 @@ module.exports = {
   noun: "Country",
   display: {
     label: "New Country",
-    description: "Triggers to populate the country dropdown",
-    important: true,
+    description: "Triggers to populate the country dropdown.",
+    // important: true,
     hidden: true
   },
   operation: {
