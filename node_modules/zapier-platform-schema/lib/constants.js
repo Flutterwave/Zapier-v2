@@ -1,6 +1,8 @@
 module.exports = {
-  ROOT_GITHUB: 'https://github.com/zapier/zapier-platform-schema',
+  ROOT_GITHUB: 'https://github.com/zapier/zapier-platform',
   DOCS_PATH: 'docs/build/schema.md',
+  DOC_URL_TEMPLATE:
+    'https://platform.zapier.com/cli_docs/schema<%= anchor %>@<%= version %>',
   SKIP_KEY: '_skipTest',
   // the following pairs of keys can't be used together in FieldSchema
   // they're stored here because they're used in a few places
@@ -13,6 +15,7 @@ module.exports = {
     ['children', 'default'], // default is ignored
     ['dict', 'list'], // Use only one or the other
     ['dynamic', 'dict'], // dict is ignored
-    ['dynamic', 'choices'] // choices are ignored
-  ]
+    ['dynamic', 'choices'], // choices are ignored
+  ],
+  FIELD_SCHEMA_BOOLEANS: new Set(['dict', 'list']),
 };

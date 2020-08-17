@@ -4,6 +4,7 @@ const authentication = require('./authentication');
 const transactionTrigger = require('./triggers/transaction');
 const transferTrigger = require('./triggers/transfer');
 const subscriptionTrigger = require('./triggers/subscription');
+const cancelSubscriptionTrigger = require('./triggers/cancel_subscription')
 // const bankTrigger = require('./triggers/bank');
 const countryTrigger = require("./triggers/country");
 /** Actions */
@@ -24,10 +25,10 @@ const App = {
   afterResponse: [h.autoParseJson],
   resources: {},
   triggers: {
+    [cancelSubscriptionTrigger.key]: cancelSubscriptionTrigger,
     [transactionTrigger.key]: transactionTrigger,
     [transferTrigger.key]: transferTrigger,
     [subscriptionTrigger.key]: subscriptionTrigger,
-    // [bankTrigger.key]: bankTrigger,
     [countryTrigger.key]: countryTrigger
   },
   creates: {
