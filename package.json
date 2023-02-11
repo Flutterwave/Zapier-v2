@@ -12,7 +12,7 @@
     "npm": ">=5.6.0"
   },
   "dependencies": {
-    "npm-check-updates": "^4.1.2",
+    "npm-check-updates": "^16.7.4",
     "zapier-platform-core": "7.2.2"
   },
   "devDependencies": {
